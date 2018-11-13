@@ -1,0 +1,12 @@
+<!--pages/index/index.wxml-->
+<view class="title-container">
+	<text class="title"> 永南汽配城\n欢迎您 </text>
+</view>
+<view class="button-container">
+	<button
+		wx:if="{{canIUse}}" open-type="getUserInfo" lang="zh_CN"
+		bindgetuserinfo="bindGetUserInfo" class="login-button">
+		进入
+	</button>
+	<view wx:else> 请升级微信版本 </view>
+</view>

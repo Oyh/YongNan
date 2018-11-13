@@ -1,0 +1,40 @@
+<!--pages/seller/main/main.wxml-->
+<view class="seller-info-container">
+	<view class="seller-picture"> 头像 </view>
+	<view class="seller-name"> {{seller.name}}dflkadjflkajklfajd </view>
+	<view class="seller-grade"> {{seller.grade}}分 </view>
+</view>
+
+<view class="seller-business-container">
+	<view class="seller-monthly-order">
+		<view class="title"> 本月订单数 </view>
+		<view class="num"> {{seller.business.monthlyOrder}} </view>
+	</view>
+	<view class="seller-monthly-income">
+		<view class="title"> 本月收入 </view>
+		<view class="num"> ¥{{seller.business.monthlyIncome}} </view>
+	</view>
+</view>
+
+<view class="seller-menu-container">
+	<view class="block">
+		<view class="block-icon"> icon </view>
+		<view class="blcok-name"> 商品管理 </view>
+	</view>
+	<view class="block">
+		<view class="block-icon"> icon </view>
+		<view class="blcok-name"> 订单管理 </view>
+	</view>
+	<view class="block">
+		<view class="block-icon"> icon </view>
+		<view class="blcok-name"> 商铺管理 </view>
+	</view>
+	<view class="block">
+		<view class="block-icon"> icon </view>
+		<view class="blcok-name"> 收入管理 </view>
+	</view>
+	<view class="block">
+		<view class="block-icon"> icon </view>
+		<view class="blcok-name"> 联系客服 </view>
+	</view>
+</view>

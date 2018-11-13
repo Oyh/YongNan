@@ -1,0 +1,35 @@
+/* pages/buyer/order/finish.wxss */
+page {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	align-items: center;
+	text-align: center;
+	font-size: 40rpx;
+}
+
+.success-icon {
+	margin-top: 100rpx;
+}
+
+.success-text {
+	line-height: 1;
+	padding-bottom: 50rpx;
+	border-bottom: 1px solid black;
+}
+
+.navi-wrapper {
+	display: flex;
+	width: 80%;
+	margin-top: 50rpx;
+}
+
+.navi-detail,
+.navi-back {
+	flex: 1;
+	border-left: 1px solid black;
+}
+
+.navi-detail {
+	border-left: none;
+}

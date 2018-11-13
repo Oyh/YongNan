@@ -1,0 +1,9 @@
+<!--pages/seller/order/management.wxml-->
+<view wx:for="{{orderList}}" wx:key="{{index}}" class="order-item">
+	<view class="seller-info-container">
+		<view class="seller-name"> 买家：{{item.buyerName}} </view>
+	</view>
+	<view class="order-time"> 下单时间： {{item.date}} {{item.time}} </view>
+	<view class="order-price"> 订单总价： ¥{{item.price}} </view>
+	<view class="order-status"> 未发货 </view>
+</view>

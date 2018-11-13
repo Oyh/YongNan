@@ -1,0 +1,49 @@
+<!--pages/seller/goods/addOrModify.wxml-->
+<scroll-view class="input-container" scroll-y>
+	<view class="name inputBox">
+		<view class="inputLabel"> 名称 </view>
+		<input data-label="name" placeholder="请输入配件名称" maxlength="20"
+			confirm-type="next" bindinput="handleInput" />
+	</view>
+
+	<view class="price inputBox">
+		<view class="inputLabel"> 价格 </view>
+		<input data-label="price" placeholder="请输入配件价格" maxlength="10"
+			type="digit" confirm-type="next" bindinput="handleInput" />
+	</view>
+
+	<view class="brand inputBox">
+		<view class="inputLabel"> 品牌 </view>
+		<input data-label="brand" placeholder="请输入配件品牌" maxlength="6"
+			confirm-type="next" bindinput="handleInput" />
+	</view>
+
+	<view class="parts inputBox">
+		<view class="inputLabel"> 类型 </view>
+		<input data-label="parts" placeholder="请输入配件类型" maxlength="6"
+			confirm-type="next" bindinput="handleInput" />
+	</view>
+
+	<view class="description inputBox">
+		<view class="inputLabel"> 描述 </view>
+		<textarea data-label="description" placeholder="请输入配件描述" maxlength="40"
+			confirm-type="next" bindinput="handleInput" />
+	</view>
+
+	<view class="image-container">
+		<view class="inputLabel"> 图片 </view>
+		<view class="image-wrapper">
+			<view wx:if="{{goods.imageUrl == ''}}" class="no-image" bindtap="chooseImage">
+				点击添加图片
+			</view>
+			<view wx:else class="has-image">
+				<image src="{{goods.imageUrl}}" mode="aspectFill"
+					bindtap="handleImagePreview">
+				</image>
+				<view class="delete-button" bindtap="removeImage"></view>
+			</view>
+		</view>
+	</view>
+</scroll-view>
+
+<view class="upload-button"> 确认提交 </view>

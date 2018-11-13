@@ -1,0 +1,17 @@
+// ns = naviSelected	ni = naviIndex
+function classFilter(ns, ni) {
+	if (ns == ni) return 'active';
+	if (ns == ni + 1) return 'previous';
+	if (ns == ni - 1) return 'next';
+	return '';
+}
+
+// 保留两位小数
+function toFix(value) {
+	return value.toFixed(2);
+}
+
+module.exports = {
+	getNaviClass: classFilter,
+	toFix: toFix
+}

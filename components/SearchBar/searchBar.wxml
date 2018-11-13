@@ -1,0 +1,16 @@
+<!-- 组件 搜索框 -->
+<searchBar>
+	<!-- sb = search bar -->
+	<view class="blank"></view>
+ 	<view class="sb-container">
+	 <view class="sb-input-container">
+			<icon class="sb-icon" type="search" size="18"></icon>
+			<input class="sb-input" confirm-type="search" bindconfirm="_searchEvent"
+				bindinput="_keywordInput" bindtap="_jumpEvent" value="{{myKeywords}}"
+				placeholder="请输入想要搜索的类型" disabled="{{disable}}" focus="{{focus}}"/>	
+		</view>
+		<view class="sb-button-container" wx:if="{{showButton}}">
+			<view class="sb-button" bindtap="_searchEvent"> 搜索 </view>
+		</view>
+	</view>
+</searchBar>

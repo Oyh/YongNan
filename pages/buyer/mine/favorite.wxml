@@ -1,0 +1,22 @@
+<!--pages/buyer/mine/favorite.wxml-->
+<view wx:for="{{favorite}}" wx:key="xxx" class="favorite-item">
+	<movable-area>
+		<movable-view class="seller-container" direction="horizontal"
+			x="{{item.x}}" inertia="true" out-of-bounds="true" damping="100"
+			bindchange="handleMovableChange" data-index="{{index}}">
+			<view class="seller-picture"> 图片{{index}} </view>
+			<view class="seller-info-wrapper">
+				<view class="seller-info-top">
+					<view class="seller-name"> {{item.name}} </view>
+					<view class="seller-grade"> 5.0分 </view>
+				</view>
+				<view class="seller-brand"> 主营品牌：XX，XX，XX，XX，XX，XX，XX，XX </view>
+				<view class="seller-parts"> 主营配件：XX，XX，XX，XX，XX，XX，XX，XX </view>
+			</view>
+		</movable-view>
+	</movable-area>
+
+	<view class="del-button" data-index="{{index}}">
+		<text> 删除\n收藏 </text>
+	</view>
+</view>

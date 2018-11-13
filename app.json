@@ -1,0 +1,30 @@
+{
+	"pages": [
+		"pages/rider/main/main",
+		"pages/seller/info/modify",
+		"pages/seller/info/details",
+		"pages/seller/order/details",
+		"pages/seller/order/management",
+		"pages/seller/goods/addOrModify",
+		"pages/seller/goods/management",
+		"pages/seller/main/main",
+		"pages/buyer/order/details",
+		"pages/buyer/order/management",
+		"pages/buyer/mine/favorite",
+		"pages/buyer/mine/mine",
+		"pages/buyer/seller/sellerDetails",
+		"pages/buyer/seller/seller",
+		"pages/buyer/order/finish",
+		"pages/buyer/order/comfirm",
+		"pages/buyer/search/search",
+		"pages/buyer/index/index",
+		"pages/index/index",
+		"pages/logs/logs"
+	],
+	"window": {
+		"backgroundTextStyle": "dark",
+		"navigationBarBackgroundColor": "#333",
+		"navigationBarTitleText": "永南汽配城",
+		"navigationBarTextStyle": "white"
+	}
+}

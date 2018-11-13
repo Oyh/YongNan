@@ -1,0 +1,84 @@
+<!--pages/buyer/seller/seller.wxml-->
+<wxs src="../../common/filter.wxs" module="filter" />
+
+<scroll-view class="page" scroll-y="{{!isShowCart}}" scroll-into-view="{{toView}}"
+	bindscroll="scroll">
+	<view class="seller-info-container" id="top">
+		<view class="seller-picture"> 图片 </view>
+		<view class="seller-right">
+			<view class="seller-announcement">{{seller.announcement}}</view>
+			<view class="seller-more-detail"> 商家详情 </view>
+		</view>
+		<view class="favorite-icon-wrapper">
+			<view class="favorite-icon"  bindtap="favoriteSeller"></view>
+		</view>
+	</view>
+
+	<view class="navi-container {{naviFixed ? 'fixed' : ''}}">
+		<view wx:for="{{navi}}" wx:for-index="i" wx:key="xxx"
+			class="navi-item {{filter.getNaviClass(naviSelected, i)}}">
+			<view class="content" id="{{'c' + i}}" bindtap="selectCategory">
+				{{item.category}}
+			</view>
+			<view hidden="{{naviSelected != i}}" wx:for="{{item.subcategory}}" wx:key="xxx"
+				wx:for-item="subitem" class="navi-subitem {{subNaviSelected == index ? 'active' : ''}}"
+				id="{{'c' + i + '-' + index}}" bindtap="selectSubcategory">
+				{{subitem}}
+			</view>
+		</view>
+	</view>
+
+	<view class="menu-container">
+		<view wx:for="{{parts}}" wx:key="xxx" class="menu-item" id="{{item.id}}">
+			<!-- {{item.name}} -->
+			<view class="menu-item-picture"> 图片{{index}} </view>
+			<view class="menu-item-info">
+				<view class="menu-item-name"> {{item.name}}asdfasdfdfdfdfdfdfdfasdfas </view>
+				<view class="menu-item-price"> ¥{{item.price}} </view>
+				<view class="menu-item-num">
+					<view class="counter">
+						<view class="jian" wx:if="{{item.num > 0}}" data-index="{{index}}"
+							bindtap="decreaseNum"></view>
+						<view wx:if="{{item.num > 0}}"> {{item.num}} </view>
+						<view class="jia" data-index="{{index}}" bindtap="increaseNum"></view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="blank"></view>
+	</view>
+</scroll-view>
+
+<view class="cart-container" hidden="{{totalPrice < 0.01}}">
+	<view class="cart-info">
+		<view class="cart-price" bindtap="showCart">
+			共 {{filter.toFix(totalPrice)}} 元
+		</view>
+		<view class="cart-confirm"> 确定 </view>
+	</view>
+
+	<view class="cart-mask" hidden="{{!isShowCart}}" bindtap="showCart"></view>
+
+	<scroll-view hidden="{{!isShowCart}}" scroll-y class="cart-detail">
+		<view wx:for="{{parts}}" wx:if="{{item.num > 0}}" wx:key="xxx"
+			class="cart-item">
+			<view class="cart-item-name"> {{item.name}}adsfasdfasdfasfasdfasdf </view>
+			<view class="cart-item-price"> ¥{{filter.toFix(item.num * item.price)}} </view>
+			<view class="cart-item-num">
+				<view class="counter">
+					<view class="jian" wx:if="{{item.num > 0}}" data-index="{{index}}"
+						bindtap="decreaseNum"></view>
+					<view wx:if="{{item.num > 0}}"> {{item.num}} </view>
+					<view class="jia" data-index="{{index}}" bindtap="increaseNum"></view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+	
+	<view class="cart-title" hidden="{{!isShowCart}}">
+			<view> 已选产品</view>
+			<view bindtap="clearCart"> 清空 </view>
+		</view>
+</view>
+
+<!-- <view class="modal"></view> -->

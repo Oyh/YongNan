@@ -1,0 +1,43 @@
+<!--pages/rider/main/main.wxml-->
+<scroll-view class="page" scroll-y>
+	<view class="rider-info-container">
+		<view class="rider-image"> 头像 </view>
+
+		<view class="rider-info-middle">
+			<view class="rider-name"> {{rider.name}} </view>
+			<view class="rider-tel"> 电话号码：{{rider.tel}} </view>
+		</view>
+
+		<view class="rider-info-right">
+			<view class="rider-grade"> {{rider.grade}}分 </view>
+			<view class="rider-modify-button"> 修改 </view>
+		</view>
+	</view>
+
+	<view class="rider-business-container">
+		<view class="rider-monthly-order">
+			<view class="title"> 本月接单数 </view>
+			<view class="num"> {{rider.business.monthlyOrder}} </view>
+		</view>
+		<view class="rider-monthly-income">
+			<view class="title"> 本月配送费 </view>
+			<view class="num"> ¥{{rider.business.monthlyIncome}} </view>
+		</view>
+	</view>
+
+	<view class="order-wrapper">
+		<view class="order-title">
+			<view class="left"> 我的订单 </view>
+			<view class="right"> 更多 </view>
+		</view>
+
+		<view wx:for="{{rider.order}}" wx:key="{{index}}" class="order-item">
+			<view class="order-item-seller"> 商铺：{{item.seller}} </view>
+			<view class="order-item-buyer"> 商铺：{{item.buyer}} </view>
+			<view class="order-item-address"> 商铺：{{item.address}} </view>
+			<view class="order-item-status"> {{item.status}} </view>
+		</view>
+	</view>
+</scroll-view>
+
+<view class="order-receiving-button"> 我要接单 </view>

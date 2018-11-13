@@ -1,0 +1,8 @@
+<!--pages/buyer/seller/sellerDetails.wxml-->
+<view class="seller-picture"> 图片 </view>
+<view class="seller-announcement text"> 公告：{{seller.announcement}} </view>
+<view class="seller-address text"> 商铺地址：{{seller.address}} </view>
+<view class="seller-contact text"> 联系方式：{{seller.contact}} </view>
+<view class="seller-bussiness-hours text"> 营业时间：{{seller.bussinessHours}} </view>
+<view class="seller-brand text"> 主营品牌：{{seller.brand}} </view>
+<view class="seller-parts text"> 主营配件：{{seller.parts}} </view>

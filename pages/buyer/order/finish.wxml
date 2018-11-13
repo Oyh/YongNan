@@ -1,0 +1,12 @@
+<!--pages/buyer/order/finish.wxml-->
+<icon class="success-icon" type="success" size="{{iconSize}}"></icon>
+
+<text class="success-text">
+	下单成功！请耐⼼心等待商家确认\n
+	订单号:{{orderID}}
+</text>
+
+<view class="navi-wrapper">
+	<view class="navi-detail"> 订单详情 </view>
+	<view class="navi-back"> 返回首页 </view>
+</view>

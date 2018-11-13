@@ -1,0 +1,54 @@
+/* pages/seller/info/details.wxss */
+@import "../../lib/style/iconfont.wxss";
+
+page {
+	position: relative;
+	font-size: 20px;
+}
+
+.seller-info-container {
+	height: calc(100vh - 50px);
+	overflow: scroll;
+}
+
+.modify-button {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
+/* ---------------- */
+.line {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	margin-top: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.double {
+	height: 60px;
+	display: -webkit-box;
+	white-space: normal !important;
+	word-wrap: break-word;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.seller-image {
+	height: auto;
+	overflow: visible;
+	white-space: normal;
+	margin-bottom: 10px;
+}
+.seller-image .image {
+	height: 200px;
+	width: 200px;
+	margin: auto;
+	margin-top: 5px;
+	background-color: #ddd;
+	line-height: 200px;
+	text-align: center;
+}

@@ -1,0 +1,56 @@
+<!--pages/buyer/search/search.wxml-->
+<view class="menu-container">
+	<!-- 筛选栏 -->
+	<view class="nav-container">
+		<view class="nav-item {{selectNav == 1 ? 'active': ''}}"
+			bindtap="showMenu" data-nav="1">
+			<view class="content"> 品牌：{{brandKeyword}} </view>
+			<view class="icon"></view>
+		</view>
+		<view class="nav-item {{selectNav == 2 ? 'active': ''}}"
+			bindtap="showMenu" data-nav="2">
+			<view class="nav-content"> 配件：{{partsKeyword}} </view>
+			<view class="icon"></view>
+		</view>
+	</view>
+	<!-- 品牌列表 -->
+	<view class="brand-list-container {{selectNav == 1 ? 'show' : ''}}">
+		<view class="brand-list-left">
+			<view wx:for="{{brandList}}" wx:key="xxx" id="{{index}}" bindtap="selectBrandOrder"
+				class="brand-list-order {{brandOrder == index ? 'active' : ''}}">
+				{{item.order}}
+			</view>
+		</view>
+		<scroll-view class="brand-list-right" scroll-y>
+			<view wx:for="{{brandList[brandOrder].child}}" wx:key="xxx" id="{{index}}"
+				class="brand-list-item-wrapper">
+				<view class="brand-list-item {{brandIndex == index ? 'active' : ''}}"
+					id="{{index}}" bindtap="selectBrandItem">
+					{{item}}{{index}}
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 配件列表 -->
+	<view class="parts-list-container {{selectNav == 2 ? 'show' : ''}}">
+		<view class="parts-list-left"></view>
+	</view>
+</view>
+<view class="mask {{selectNav == 0 ? '' : 'show'}}" bindtap="hideMenu"></view>
+
+<!-- 商家列表 -->
+<scroll-view class="result-container" scroll-y="{{selectNav == 0}}">
+	<view class="blank"></view>
+	<view class="seller-container" wx:for="{{searchResult}}" wx:key="xxx">
+		<view class="seller-picture-wrapper"> 图片{{index}} </view>
+		<view class="seller-info-container">
+			<view class="seller-name-wrapper"> {{item.name}} </view>
+			<view class="seller-brand-wrapper">
+				<text> 主营品牌：{{item.brand}} </text>
+			</view>
+			<view class="seller-parts-wrapper">
+				<text> 主营配件：{{item.parts}} </text>
+			</view>
+		</view>
+	</view>
+</scroll-view>

@@ -1,0 +1,61 @@
+<!--pages/seller/info/modify.wxml-->
+<scroll-view class="seller-info-container" scroll-y>
+	<view class="seller-shop-name single line"> 
+		<i class="iconfont icon-geren"></i> 商铺名称
+		<input data-label="shopName" value="{{seller.shopName}}" maxlength="10" 
+			placeholder="请输入商铺名称" bindinput="handleInput" />
+	</view>
+
+	<view class="seller-address double line"> 
+		<i class="iconfont icon-geren"></i> 商铺地址
+		<textarea data-label="address" value="{{seller.address}}" maxlength="40" 
+			placeholder="请输入商铺地址" bindinput="handleInput" />
+	</view>
+
+	<view class="seller-contact-name single line"> 
+		<i class="iconfont icon-geren"></i> 联系人名称
+		<input data-label="contactName" value="{{seller.contactName}}" maxlength="10" 
+			placeholder="请输入联系人名称" bindinput="handleInput" />
+	</view>
+
+	<view class="seller-contact-tel single line"> 
+		<i class="iconfont icon-geren"></i> 联系人名称
+		<input data-label="contactTel" value="{{seller.contactTel}}" maxlength="11" 
+			placeholder="请输入联系人电话" type="number" bindinput="handleInput" />
+	</view>
+
+	<view class="seller-business-hours single line"> 
+		<i class="iconfont icon-geren"></i> 营业时间
+		<input data-label="businessHours" value="{{seller.businessHours}}" maxlength="15" 
+			placeholder="请输入营业时间" type="number" bindinput="handleInput" />
+	</view>
+
+	<view class="seller-main-brand double line"> 
+		<i class="iconfont icon-geren"></i> 主营品牌
+		<textarea data-label="mainBrand" value="{{seller.mainBrand}}" maxlength="40" 
+			placeholder="请输入主营品牌" bindinput="handleInput" />
+	</view>
+	
+	<view class="seller-main-parts double line"> 
+		<i class="iconfont icon-geren"></i> 主营配件
+		<textarea data-label="mainParts" value="{{seller.mainParts}}" maxlength="40" 
+			placeholder="请输入主营配件" bindinput="handleInput" />
+	</view>
+
+	<view class="seller-image"> 
+		<i class="iconfont icon-geren"></i> 商铺形象
+		<view class="image-wrapper">
+			<view wx:if="{{seller.imageUrl == ''}}" class="no-image" bindtap="chooseImage">
+				点击添加图片
+			</view>
+			<view wx:else class="has-image">
+				<image src="{{seller.imageUrl}}" mode="aspectFill"
+					bindtap="handleImagePreview">
+				</image>
+				<view class="delete-button" bindtap="removeImage"></view>
+			</view>
+		</view>
+	</view>
+</scroll-view>
+
+<view class="upload-button"> 确认修改 </view>

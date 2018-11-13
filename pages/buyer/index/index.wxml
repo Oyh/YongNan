@@ -1,0 +1,28 @@
+<!--pages/buyer/index/index.wxml-->
+<view class="sort-container">
+	<view class="sort-selector">
+		<view class="sort-{{sortSelected ? 'selected' : 'unselected'}}"
+			bindtap="selectSort" id="brand"> 按品牌 </view>
+		<view class="sort-{{sortSelected ? 'unselected' : 'selected'}}"
+			bindtap="selectSort" id="parts"> 按配件 </view>
+	</view>
+	<view class="sort-list">
+		<view wx:for="{{sortSelected ? brandList : partsList}}" wx:key="xxx" wx:if="{{index<7}}"
+			class="sort-item" id="item{{index}}" bindtap="goSearchByType">
+			{{item}}
+		</view>
+		<view class="sort-item" id="itemMore" bindtap="showMore"> 更多 </view>
+	</view>
+</view>
+
+<view class="ad-wrapper"> 广告 </view>
+
+<view class="popular-container">
+	<view class="popular-title"> 热门商家 </view>
+	<view class="seller-container" wx:for="{{seller}}" wx:key="xxx">
+		<view class="seller-picture-wrapper"> 图片 </view>
+		<view class="seller-info-wrapper">
+			<view class="seller-name"> {{item}} </view>
+		</view>
+	</view>
+</view>

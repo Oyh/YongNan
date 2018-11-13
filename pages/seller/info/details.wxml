@@ -1,0 +1,36 @@
+<!--pages/seller/info/details.wxml-->
+<scroll-view class="seller-info-container" scroll-y>
+	<view class="seller-shop-name single line"> 
+		<i class="iconfont icon-geren"></i> 商铺名称：{{seller.shopName}}
+	</view>
+
+	<view class="seller-shop-address double line"> 
+		<i class="iconfont icon-geren"></i> 商铺地址：{{seller.address}}
+	</view>
+
+	<view class="seller-contact-name single line"> 
+		<i class="iconfont icon-geren"></i> 联系人名称：{{seller.contactName}}
+	</view>
+
+	<view class="seller-contact-tel single line"> 
+		<i class="iconfont icon-geren"></i> 联系人电话：{{seller.contactTel}}
+	</view>
+
+	<view class="seller-business-hours single line"> 
+		<i class="iconfont icon-geren"></i> 营业时间：{{seller.businessHours}}
+	</view>
+
+	<view class="seller-main-brand double line"> 
+		<i class="iconfont icon-geren"></i> 主营品牌：{{seller.mainBrand}}
+	</view>
+
+	<view class="seller-main-parts double line"> 
+		<i class="iconfont icon-geren"></i> 主营配件：{{seller.mainParts}}
+	</view>
+	<view class="seller-image single line"> 
+		<i class="iconfont icon-geren"></i> 店铺形象
+		<view class="image"> 图片 </view>
+	</view>
+</scroll-view>
+
+<view class="modify-button"> 修改信息 </view>

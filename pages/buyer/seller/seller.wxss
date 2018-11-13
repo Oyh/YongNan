@@ -1,0 +1,374 @@
+/* pages/buyer/seller/seller.wxss */
+.page {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	font-size: 35rpx;
+	overflow: scroll;
+	color: black;
+	background-color: #eee;
+}
+
+/*----------------*/
+.seller-info-container {
+	display: flex;
+	width: 100%;
+	height: 25vh;
+	position: relative;
+	background-color: #aaa;
+}
+.seller-info-container::before {
+	position: absolute;
+	right: 0;
+	top: 0;
+	content: '';
+	width: 0;
+	height: 0;
+	border-width: 40rpx;
+	border-style: solid;
+	border-color: #eee #eee transparent transparent;
+}
+
+.seller-picture {
+	width: 23vh;
+	height: 23vh;
+	margin: 1vh;
+	flex-shrink: 0;
+	background-color: #eee;
+}
+
+.seller-right {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	margin: 5vh 2vh 1vh 1vh;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+.seller-announcement {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+	height: 160rpx;
+	line-height: 40rpx;
+	word-break: break-all;
+	white-space: pre-wrap;
+}
+.seller-more-detail {
+	padding-right: 50rpx;
+	background-color: #eee;
+}
+
+.favorite-icon-wrapper {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100rpx;
+	height: 100rpx;
+	background-color: transparent;
+}
+.favorite-icon {
+	position: relative;
+	left: 65rpx;
+	top: 20rpx;
+	background-color: red;
+	transform: rotate(45deg);
+}
+.favorite-icon::before,
+.favorite-icon::after {
+	content: '';
+	position: absolute;
+	left: -50%;
+	top: 0;
+	border-radius: 50%;
+}
+.favorite-icon::after {
+	left: 0;
+	top: -50%;
+}
+.favorite-icon,
+.favorite-icon::before,
+.favorite-icon::after {
+	width: 20rpx;
+	height: 20rpx;
+	background-color: red;
+}
+
+/*----------------*/
+.navi-container {
+	float: left;
+	width: 20%;
+	height: 100vh;
+	z-index: 98;
+}
+.navi-container.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.navi-item {
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-color: white;
+}
+.navi-item .content {
+	width: 100%;
+	height: 8vh;
+	line-height: 8vh;
+	text-align: center;
+	color: #999;
+}
+.navi-item .content::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-bottom: 1px solid #ddd;
+	height: 1px;
+	color: #ddd;
+	transform: scaleY(0.5);
+	-webkit-transform: scaleY(0.5);
+	transform-origin: left bottom;
+	-webkit-transform-origin: left bottom;
+}
+.navi-item.active {
+	/* background-color: transparent; */
+	height: auto;
+	border-bottom: 1px solid black;
+}
+.navi-item.active ::before {
+	border-bottom: none;
+}
+.navi-item.active .content {
+	color: darkgoldenrod;
+	border-bottom: 1px solid black;
+}
+
+.navi-subitem {
+	color: #bbb;
+	margin: 0 10%;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+	font-size: 33rpx;
+	height: 100rpx;
+	line-height: 50rpx;
+	word-wrap: break-word;
+}
+.navi-subitem.active {
+	color: darkgoldenrod;
+}
+.navi-subitem:last-child {
+	border-bottom: none;
+}
+
+/*----------------*/
+.menu-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	float: right;
+	width: 80%;
+	padding-bottom: 20rpx;
+}
+
+.menu-item {
+	display: flex;
+	flex-flow: row nowrap;
+	height: 250rpx;
+	width: 90%;
+	margin-top: 20rpx;
+	padding: 15rpx;
+	background-color: white;
+	border-radius: 10rpx;
+	box-shadow: 2rpx 5rpx 1rpx 1rpx #ccc;
+	text-align: right;
+}
+
+.menu-item-picture {
+	flex-shrink: 0;
+	width: 250rpx;
+	background-color: #eee;
+}
+
+.menu-item-info {
+	display: flex;
+	flex-flow: column;
+	flex-grow: 1;
+	margin-left: 20rpx;
+}
+.menu-item-info >  view {
+	margin-bottom: 10rpx;
+}
+
+.menu-item-name {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	height: 100rpx;
+	line-height: 50rpx;
+	font-size: 40rpx;
+	word-break: break-all;
+	white-space: pre-wrap;
+}
+
+/* .menu-item-price {
+} */
+
+.menu-item-num {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.blank {
+	position: relative;
+	height: 150rpx;
+	width: 100%;
+}
+
+/*----------------*/
+.cart-container {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column-reverse;
+	width: 100%;
+	z-index: 999;
+}
+
+.cart-info {
+	display: flex;
+	height: 100rpx;
+	line-height: 100rpx;
+	text-align: center;
+	z-index: 999;
+}
+.cart-price {
+	width: 75%;
+	background-color: black;
+	color: white;
+}
+.cart-confirm {
+	width: 25%;
+	background-color: orangered;
+	color: black;
+}
+
+.cart-mask {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 990;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cart-detail {
+	max-height: 400rpx;
+	background-color: white;
+	z-index: 999;
+}
+.cart-item {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	height: 80rpx;
+}
+.cart-item > view {
+	display: inline-block;
+	font-size: 30rpx;
+	padding: 0 10rpx;
+}
+.cart-item-name {
+	width: 55%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.cart-item .cart-item-price {
+	width: 25%;
+	font-size: 37rpx;
+}
+.cart-item-num {
+	width: 20%;
+}
+
+.cart-title {
+	display: flex;
+	justify-content: space-between;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 25rpx;
+	padding: 0 20rpx;
+	background-color: #eee;
+	z-index: 999;
+}
+
+/*----------------*/
+.counter {
+	display: flex;
+	border-radius: 25rpx;
+	width: auto;
+	height: 40rpx;
+	border: 1px solid orangered;
+	border-right: none;
+	justify-content: flex-end;
+	background-color: #eee;
+	font-size: 30rpx;
+}
+.counter view {
+	display: inline-block;
+	width: 40rpx;
+	line-height: 40rpx;
+	text-align: center;
+	position: relative;
+}
+
+.counter .jian::after {
+	content: "";
+	height: 4rpx;
+	width: 20rpx;
+	display: block;
+	background: #333;
+	border-radius: 10rpx;
+	position: absolute;
+	top: 19rpx;
+	left: 10rpx;
+}
+
+.counter :nth-child(2) {
+	width: 50rpx;
+}
+
+.counter .jia {
+	background-color: orangered;
+	border-radius: 25rpx;
+	border: 1px solid orangered;
+}
+.counter .jia::before,
+.counter .jia::after {
+	content: "";
+	height: 4rpx;
+	width: 20rpx;
+	display: block;
+	background: #333;
+	border-radius: 10rpx;
+	position: absolute;
+	top: 19rpx;
+	left: 10rpx;
+}
+.counter .jia::after {
+	height: 20rpx;
+	width: 4rpx;
+	top: 10rpx;
+	left: 19rpx; 
+}

@@ -1,0 +1,26 @@
+<!--pages/seller/goods/management.wxml-->
+<scroll-view class="goods-wrapper" scroll-y>
+	<view wx:for="{{goods}}" wx:key="{{index}}" class="goods-item-container">
+		<movable-area>
+			<movable-view class="goods-item" direction="horizontal"
+			x="{{item.x}}" inertia="true" out-of-bounds="true" damping="100"
+			bindchange="handleMovableChange" data-index="{{index}}">
+			<view class="goods-picture"> 图片{{index}} </view>
+			<view class="goods-info-container">
+				<view class="goods-info-top">
+					<view class="goods-name"> {{item.name}}啊分居撒开来点击菲利克斯等级分 </view>
+					<view class="goods-price"> ¥{{item.price}} </view>
+				</view>
+				<view class="goods-brand"> 品牌：{{item.brand}} </view>
+				<view class="goods-parts"> 类型：{{item.parts}} </view>
+			</view>
+			</movable-view>
+		</movable-area>
+
+		<view class="button-wrapper">
+			<view class="edit-button"> 编辑 </view>
+			<view class="delete-button"> 删除 </view>
+		</view>
+	</view>
+</scroll-view>
+<view class="add-button"> 新增商品 </view>

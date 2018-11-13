@@ -1,0 +1,18 @@
+<!--pages/buyer/mine/mine.wxml-->
+<view class="buyer-info-container">
+	<view class="buyer-picture"> 头像 </view>
+	<view class="buyer-name"> {{buyer.name}} </view>
+</view>
+
+<view class="buyer-points-wrapper">
+	<view class="buyer-points-title"> 我的积分 </view>
+	<view class="buyer-points"> {{buyer.points}}{{(buyer.lastPoints > buyer.points) ? '↓' : '↑'}} </view>
+	<view class="buyer-points-grade"> 差1分成为超级会员 </view>
+	<view class="buyer-points-gap">
+		本期比上期{{(buyer.lastPoints > buyer.points) ? '' : '+'}}{{buyer.points - buyer.lastPoints}}
+	</view>
+</view>
+
+<view class="buyer-favorite-wrapper"> 我的收藏 </view>
+
+<view class="service-wrapper"> 客服中心 </view>
